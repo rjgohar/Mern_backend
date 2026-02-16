@@ -1,0 +1,22 @@
+{
+  "name": "shopping",
+  "version": "1.0.0",
+  "description": "shopping list",
+  "license": "ISC",
+  "author": "rjgohar",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js",
+    "server": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "mongoose": "^9.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
