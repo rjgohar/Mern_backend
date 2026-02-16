@@ -1,10 +1,13 @@
-const epress = require("express");
+const express = require("express");
 const dotenv = require("dotenv").config();
-const pORT = process.env.PORT || 5000;
-const app = epress();
+const PORT = process.env.PORT || 5000;
+const { errorHandler } = require("./middleware/erroHandle");
+const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 app.use("/api/goals", require("./routes/goalsRoutes"));
-
-app.listen(pORT, () => {
-  console.log(`Server is running on port ${pORT}`);
+app.use(errorHandler);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
